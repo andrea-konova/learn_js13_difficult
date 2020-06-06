@@ -1,29 +1,31 @@
-let num = 266219;
+// создал переменную num
+const num = 266219;
 
-function getNumbers(num) {
-	let res = []
-	let base = 10
-	let currNum = Math.abs(num)
-	do {
-		let baseShiftedNum = Math.floor(currNum / base)
-		let diff = currNum - baseShiftedNum * base
-		res.unshift(diff)
-		currNum = baseShiftedNum
-	} while (currNum > 0)
-	return res
-}
+// function getNumbers(num) {
+// 	let res = []
+// 	let base = 10
+// 	let currNum = Math.abs(num)
+// 	do {
+// 		let baseShiftedNum = Math.floor(currNum / base)
+// 		let diff = currNum - baseShiftedNum * base
+// 		res.unshift(diff)
+// 		currNum = baseShiftedNum
+// 	} while (currNum > 0)
+// 	return res
+// }
 
-let foo = Array.from(num)
-console.log(foo)
-
+// преобразую число в массив
 let arrNum = num.toString().split('');
-console.log(num.toString().split(''));
+console.log(arrNum);
 
-let multiplicationArrNum = arrNum.reduce(function(multi, current) {
-  return multi + current;
-}, 0);
+let multiArrNum;
 
-console.log(multiplicationArrNum);
+// получаю каждый элемент массива
+arrNum.forEach(function(item, i, arrNum) {
+  
+  multiArrNum = item *= arrNum[i];
+  console.log(multiArrNum);
+});
 
 let numExp3 = num ** 3;
 console.log(numExp3);
