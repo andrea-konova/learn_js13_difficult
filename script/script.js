@@ -1,34 +1,23 @@
 // создал переменную num
-const num = 266219;
-
-// function getNumbers(num) {
-// 	let res = []
-// 	let base = 10
-// 	let currNum = Math.abs(num)
-// 	do {
-// 		let baseShiftedNum = Math.floor(currNum / base)
-// 		let diff = currNum - baseShiftedNum * base
-// 		res.unshift(diff)
-// 		currNum = baseShiftedNum
-// 	} while (currNum > 0)
-// 	return res
-// }
+let num = 266219;
 
 // преобразую число в массив
-let arrNum = num.toString().split('');
-console.log(arrNum);
+let arr = num.toString().split('');
 
-let multiArrNum;
+// создал переменную для произведения чисел
+let sum = 1;
 
 // получаю каждый элемент массива
-arrNum.forEach(function(item, i, arrNum) {
-  
-  multiArrNum = item *= arrNum[i];
-  console.log(multiArrNum);
+// и перемножаю элементы между собой
+arr.forEach(function(item) {
+  sum *= item;
 });
 
-let numExp3 = num ** 3;
-console.log(numExp3);
+console.log(sum);
 
-console.log(String(numExp3).slice(0,2));
+// возвожу в степень 3
+let Exp3 = sum ** 3;
+console.log(Exp3);
+
+console.log(String(Exp3).slice(0,2));
 
