@@ -1,23 +1,15 @@
-// создал переменную num
-let num = 266219;
+const num = 266219;
+const numToArray = num.toString().split('');
 
-// преобразую число в массив
-let arr = num.toString().split('');
+const amountOfArrayElements = numToArray.reduce(function (n, item) {
+  return n * item;
+})
+console.log(amountOfArrayElements);
 
-// создал переменную для произведения чисел
-let sum = 1;
+const amountPower3 = amountOfArrayElements ** 3;
+console.log(amountPower3);
 
-// получаю каждый элемент массива
-// и перемножаю элементы между собой
-arr.forEach(function(item) {
-  sum *= item;
-});
+const firstTwoDigits = String(amountPower3).slice(0,2)
 
-console.log(sum);
-
-// возвожу в степень 3
-let Exp3 = sum ** 3;
-console.log(Exp3);
-
-console.log(String(Exp3).slice(0,2));
+alert(firstTwoDigits);
 
