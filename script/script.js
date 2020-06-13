@@ -1,15 +1,30 @@
-const num = 266219;
-const numToArray = num.toString().split('');
+'use strict'
 
-const amountOfArrayElements = numToArray.reduce(function (n, item) {
-  return n * item;
-})
-console.log(amountOfArrayElements);
+// first point
+let lang;
+lang = 'en';
 
-const amountPower3 = amountOfArrayElements ** 3;
-console.log(amountPower3);
+if (lang === 'ru') {
+  console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье');
+} else if (lang === 'en') {
+  console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
+}
 
-const firstTwoDigits = String(amountPower3).slice(0,2)
+switch (lang) {
+  case 'ru':
+    console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье');
+    break;
+  case 'en':
+    console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
+    break;
+}
 
-alert(firstTwoDigits);
+// second point
+const namePerson = 'Максим';
+
+const message = (namePerson == 'Артем') ? 'директор' :
+  (namePerson == 'Максим') ? 'преподаватель' :
+   'студент' ;
+
+console.log(message);
 
