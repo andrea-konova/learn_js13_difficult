@@ -19,6 +19,30 @@ switch (lang) {
     break;
 }
 
+let ru = [],
+  en = [];
+  
+let lang1 = [
+  ru = [
+    'Понедельник', 
+    'Вторник', 
+    'Среда', 
+    'Четверг', 
+    'Пятница', 
+    'Суббота', 
+    'Воскресенье'
+  ],
+  en = [
+    'Monday', 
+    'Tuesday', 
+    'Wednesday', 
+    'Thursday', 
+    'Friday', 
+    'Saturday', 
+    'Sunday'
+  ]
+];
+
 // second point
 const namePerson = 'Максим';
 
