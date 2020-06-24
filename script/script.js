@@ -1,54 +1,18 @@
 'use strict'
 
-// first point
-let lang;
-lang = 'en';
+const wrapper = document.querySelector('.wrapper'),
+  color = document.getElementById('color'),
+  change = document.getElementById('change');
 
-if (lang === 'ru') {
-  console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье');
-} else if (lang === 'en') {
-  console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
+const getColor = function() {
+  const r = Math.floor(Math.random() * 256),
+    g = Math.floor(Math.random() * 256),
+    b = Math.floor(Math.random() * 256),
+    randomColor = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+
+  wrapper.style.backgroundColor = randomColor;
+  color.textContent = randomColor;
+  change.style.color = randomColor;
 }
 
-switch (lang) {
-  case 'ru':
-    console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье');
-    break;
-  case 'en':
-    console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
-    break;
-}
-
-let ru = [],
-  en = [];
-  
-let lang1 = [
-  ru = [
-    'Понедельник', 
-    'Вторник', 
-    'Среда', 
-    'Четверг', 
-    'Пятница', 
-    'Суббота', 
-    'Воскресенье'
-  ],
-  en = [
-    'Monday', 
-    'Tuesday', 
-    'Wednesday', 
-    'Thursday', 
-    'Friday', 
-    'Saturday', 
-    'Sunday'
-  ]
-];
-
-// second point
-const namePerson = 'Максим';
-
-const message = (namePerson == 'Артем') ? 'директор' :
-  (namePerson == 'Максим') ? 'преподаватель' :
-   'студент' ;
-
-console.log(message);
-
+change.addEventListener('click', getColor);
