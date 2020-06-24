@@ -9,7 +9,7 @@ function DomElement(selector, height, width, bg, fontSize) {
 }
 
 DomElement.prototype.createItem = function() {
-  if (this.selector == '.block') {
+  if (this.selector.indexOf('.') != -1) {
     const div = document.createElement('div');
     div.className = this.selector;
     div.style.height = this.height;
@@ -19,7 +19,7 @@ DomElement.prototype.createItem = function() {
     div.innerHTML = 'Как жизнь?';
     document.body.append(div);
   }
-  if (this.selector == '#block') {
+  if (this.selector.indexOf('#') != -1) {
     let p = document.createElement('p');
     p.id = this.selector;
     p.style.height = this.height;
@@ -32,6 +32,6 @@ DomElement.prototype.createItem = function() {
   
 };
 
-let domElement1 = new DomElement ('#block', '50px', '100px', 'green', '16px');
+let domElement1 = new DomElement ('.block', '50px', '100px', 'green', '16px');
 
 domElement1.createItem();
