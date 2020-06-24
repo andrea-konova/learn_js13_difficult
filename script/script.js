@@ -5,10 +5,8 @@ const wrapper = document.querySelector('.wrapper'),
   change = document.getElementById('change');
 
 const getColor = function() {
-  const r = Math.floor(Math.random() * 256),
-    g = Math.floor(Math.random() * 256),
-    b = Math.floor(Math.random() * 256),
-    randomColor = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+  
+  const randomColor = '#' + Math.floor(Math.random() * 256 * 256 * 256).toString(16);
 
   wrapper.style.backgroundColor = randomColor;
   color.textContent = randomColor;
