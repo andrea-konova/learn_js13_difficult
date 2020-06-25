@@ -1,6 +1,6 @@
 'use strict'
 
-function DomElement(selector, height, width, bg, fontSize) {
+function DomElement(selector = '#car', height = '150px', width = '300px', bg = 'yellow', fontSize = '20px') {
   this.selector = selector;
   this.height = height;
   this.width = width;
@@ -11,7 +11,7 @@ function DomElement(selector, height, width, bg, fontSize) {
 DomElement.prototype.createItem = function() {
     const block = (this.selector.includes('.')) ? document.createElement('div') :
       (this.selector.includes('#')) ? document.createElement('p') : 
-      console.log('Что-то пошло не так');
+      console.log('Упс... Что-то пошло не так =(');
     if (this.selector.includes('.')) {
       block.className = this.selector.slice(1);
     } else if (this.selector.includes('#')) {
@@ -28,6 +28,6 @@ DomElement.prototype.createItem = function() {
   
 };
 
-let domElement1 = new DomElement ('.block', '50px', '100px', 'green', '16px');
+let domElement1 = new DomElement ('.block', '50px', '100px', 'orange', '16px');
 
 domElement1.createItem();
