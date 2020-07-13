@@ -14,6 +14,7 @@ const pandaFights = () => {
   if (count < 300) {
     panda.style.left = count * 4 + 'px';
   } else {
+    animate = true;
     cancelAnimationFrame(fightInterval);
   }
 }
