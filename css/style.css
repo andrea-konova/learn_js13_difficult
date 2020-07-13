@@ -1,0 +1,36 @@
+body {
+  background: url('../img/Mountains.jpg');
+  background-size: cover;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1920px;
+  max-height: 100vh;
+}
+img {
+  width: 250px;
+}
+.button__block {
+  margin-top: 390px;
+}
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #408DD2;
+}
+button:focus {
+  outline: none;
+}
+.panda {
+  position: relative;
+  width: 250px;
+  padding-top: 100px;
+}

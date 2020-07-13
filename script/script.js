@@ -1,20 +1,34 @@
 'use strict'
 
-class First {
-  hello() {
-    console.log('Привет я метод родителя!');
-  }
-};
+const panda = document.querySelector('.panda'),
+  fight = document.querySelector('.fight'),
+  startingPosition = document.querySelector('.return');
 
-class Second extends First {
-  hello() {
-    super.hello();
-    console.log('А я наследуемый метод!');
+let count = 0,
+  animate = true,
+  fightInterval;
+
+const pandaFights = () => {
+  fightInterval = requestAnimationFrame(pandaFights);
+  count++;
+  if (count < 300) {
+    panda.style.left = count * 4 + 'px';
+  } else {
+    cancelAnimationFrame(fightInterval);
   }
 }
 
-const first = new First;
-const second = new Second;
+fight.addEventListener('click', () => {
+  if (animate) {
+    animate = false;
+    fightInterval = requestAnimationFrame(pandaFights);
+  } else {
+    animate = true;
+    cancelAnimationFrame(fightInterval);
+  }
+});
 
-first.hello();
-second.hello();
+startingPosition.addEventListener('click', () => {
+  count = 0;
+  panda.style.left = count;
+});
