@@ -2,7 +2,7 @@
 
 const panda = document.querySelector('.panda'),
   fight = document.querySelector('.fight'),
-  startingPosition = document.querySelector('.return');
+  reset = document.querySelector('.reset');
 
 let count = 0,
   animate = true,
@@ -29,7 +29,9 @@ fight.addEventListener('click', () => {
   }
 });
 
-startingPosition.addEventListener('click', () => {
+reset.addEventListener('click', () => {
   count = 0;
   panda.style.left = count;
+  animate = true;
+  cancelAnimationFrame(fightInterval);
 });
