@@ -1,54 +1,19 @@
 'use strict'
 
-// first point
-let lang;
-lang = 'en';
+const getArgument = (item) => {
+  if (typeof item !== 'string') {
+    alert('Аргумент не является строкой')
+    return
+  }
 
-if (lang === 'ru') {
-  console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье');
-} else if (lang === 'en') {
-  console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
+  item = item.trim();
+  if (item.length > 30) {
+    item = item.substring(0, 30) + '...';
+  }
+
+  const textNode = document.createTextNode(item);
+  document.body.append(textNode);
+
 }
 
-switch (lang) {
-  case 'ru':
-    console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье');
-    break;
-  case 'en':
-    console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
-    break;
-}
-
-let ru = [],
-  en = [];
-  
-let lang1 = [
-  ru = [
-    'Понедельник', 
-    'Вторник', 
-    'Среда', 
-    'Четверг', 
-    'Пятница', 
-    'Суббота', 
-    'Воскресенье'
-  ],
-  en = [
-    'Monday', 
-    'Tuesday', 
-    'Wednesday', 
-    'Thursday', 
-    'Friday', 
-    'Saturday', 
-    'Sunday'
-  ]
-];
-
-// second point
-const namePerson = 'Максим';
-
-const message = (namePerson == 'Артем') ? 'директор' :
-  (namePerson == 'Максим') ? 'преподаватель' :
-   'студент' ;
-
-console.log(message);
-
+getArgument('     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Подпоясал собрал знаках текстов вопроса себя скатился города толку власти дорогу напоивший рекламных переписали, текст домах lorem парадигматическая, злых решила? Снова взобравшись запятой вопрос одна парадигматическая, по всей вопроса но жаренные семь, пояс щеке языкового алфавит. Вскоре свое сих великий своих?'   );
