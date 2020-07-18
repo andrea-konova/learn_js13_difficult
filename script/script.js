@@ -1,54 +1,37 @@
 'use strict'
 
 // first point
-let lang;
-lang = 'en';
+const ruWeek = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+  enWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+let lang = 'ru';
 
 if (lang === 'ru') {
-  console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье');
+  console.log(ruWeek);
 } else if (lang === 'en') {
-  console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
+  console.log(enWeek);
 }
 
 switch (lang) {
   case 'ru':
-    console.log('Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье');
+    console.log(ruWeek);
     break;
   case 'en':
-    console.log('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday');
+    console.log(enWeek);
     break;
 }
 
-let ru = [],
-  en = [];
-  
-let lang1 = [
-  ru = [
-    'Понедельник', 
-    'Вторник', 
-    'Среда', 
-    'Четверг', 
-    'Пятница', 
-    'Суббота', 
-    'Воскресенье'
-  ],
-  en = [
-    'Monday', 
-    'Tuesday', 
-    'Wednesday', 
-    'Thursday', 
-    'Friday', 
-    'Saturday', 
-    'Sunday'
-  ]
-];
+const langArr = [];
+langArr['ru'] = ruWeek;
+langArr['en'] = enWeek;
+
+console.log(langArr[lang]);
 
 // second point
-const namePerson = 'Максим';
+const namePerson = 'Артем';
 
 const message = (namePerson == 'Артем') ? 'директор' :
-  (namePerson == 'Максим') ? 'преподаватель' :
-   'студент' ;
+  (namePerson == 'Максим') ? 'преподаватель' : 'студент' ;
 
 console.log(message);
 
