@@ -79,6 +79,17 @@ const getFirstTask = () => {
 
 getFirstTask();
 
+const getSecondTask = () => {
+  const time = date.toLocaleTimeString(),
+    dates = date.toLocaleDateString();
+
+  const div = document.createElement('div');
+  div.innerHTML = `${dates} - ${time}`;
+	document.body.append(div);
+}
+
+getSecondTask();
+
 
 // const start = () => {
 // 	getFirstTask();
