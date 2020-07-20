@@ -1,37 +1,18 @@
 'use strict'
 
-// first point
-const ruWeek = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-  enWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+  toDay = new Date().getDay();
 
-let lang = 'ru';
-
-if (lang === 'ru') {
-  console.log(ruWeek);
-} else if (lang === 'en') {
-  console.log(enWeek);
-}
-
-switch (lang) {
-  case 'ru':
-    console.log(ruWeek);
-    break;
-  case 'en':
-    console.log(enWeek);
-    break;
-}
-
-const langArr = [];
-langArr['ru'] = ruWeek;
-langArr['en'] = enWeek;
-
-console.log(langArr[lang]);
-
-// second point
-const namePerson = 'Артем';
-
-const message = (namePerson == 'Артем') ? 'директор' :
-  (namePerson == 'Максим') ? 'преподаватель' : 'студент' ;
-
-console.log(message);
-
+week.forEach((index, item) => {
+  if (item === toDay - 1) {
+    if (week[item] === 'Суббота' || week[item] === 'Воскресенье') {
+      document.write(`<p><b><i>${week[item]}</i></b></p>`);
+    } else {
+      document.write(`<p><b>${week[item]}</b></p>`);
+    }
+  } else if (week[item] === 'Суббота' || week[item] === 'Воскресенье') {
+    document.write(`<p><i>${week[item]}</i></p>`);
+  } else {
+    document.write(`<p>${week[item]}</p>`);
+  }
+})
