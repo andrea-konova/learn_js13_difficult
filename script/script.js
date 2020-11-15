@@ -32,13 +32,19 @@ const getFirstTask = () => {
     secondsName;
   
   const fixHoursName = () => {
-		const lastHours = hours.toString().slice(-1);
-		if (lastHours == 1) {
-			hoursName = 'час';
-		} else if (lastHours > 1 && lastHours < 4) {
-			hoursName = 'часа';
+		const lastNumber = hours.toString().slice(-1);
+		if (lastNumber == 1) {
+      hoursName = 'час';
+      minutesName = 'минута';
+      secondsName = 'секунда';
+		} else if (lastNumber > 1 && lastNumber <= 4) {
+      hoursName = 'часа';
+      minutesName = 'минуты';
+      secondsName = 'секунды';
 		} else {
-			hoursName = 'часов';
+      hoursName = 'часов';
+      minutesName = 'минут';
+			secondsName = 'секунд';
 		}
 	};
 
